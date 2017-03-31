@@ -8,5 +8,27 @@
 </ion-header>
 
 <ion-content padding>
-	<p>This is the PayPal payments screen.</p>
+	<form name="paymentForm">
+		<ion-item>
+			<ion-label floating>Amount</ion-label>
+			<ion-input type="text" name="amount" [(ngModel)]="payment.amount"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Currency</ion-label>
+			<ion-select [(ngModel)]="payment.currency" name="currency">
+				<ion-option value="{{currency}}" *ngFor="let currency of currencies">{{currency}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Description</ion-label>
+			<ion-input type="text" name="description" [(ngModel)]="payment.shortDescription"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Intent</ion-label>
+			<ion-input type="text" name="intent" [(ngModel)]="payment.intent"></ion-input>
+		</ion-item>
+		<p>
+			<button ion-button block color="secondary" (click)="makePayment()">MAKE PAYMENT</button>
+		</p>
+	</form>
 </ion-content>
