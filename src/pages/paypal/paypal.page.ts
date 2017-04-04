@@ -8,14 +8,15 @@ import { Config } from '../../config';
 
 export class PayPalPage {
 	payment: PayPalPayment = new PayPalPayment('10.10', 'USD', 'TV', 'sale');
-	currencies = ['EUR', 'USD']
+	currencies = ['EUR', 'USD'];
 
 	makePayment() {
+		let env = 'payPalEnvironmentSandbox';
 		PayPal.init({
 			PayPalEnvironmentProduction: Config.payPalEnvironmentProduction,
 			PayPalEnvironmentSandbox: Config.payPalEnvironmentSandbox
 		}).then(() => {
-			PayPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({})).then(() => {
+			PayPal.prepareToRender(env, new PayPalConfiguration({})).then(() => {
 				PayPal.renderSinglePaymentUI(this.payment).then((response) => {
 					alert(`Successfully paid. Status = ${response.response.state}`);
 					console.log(response);
