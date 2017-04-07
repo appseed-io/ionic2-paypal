@@ -1,5 +1,5 @@
-# Supermodular2 Ionic
-A super modular Ionic 2.x starter application.
+# Ionic 2 PayPal app
+An Ionic 2 application based on the Supermodular2 starter. This project is the source code of the "Adding PayPal Payments to Your Ionic 2 application" tutorial, originally published at http://www.appseed.io/blog/adding-paypal-payments-your-ionic-2-application.
 
 * Project's Home: https://github.com/skounis/supermodular2
 
